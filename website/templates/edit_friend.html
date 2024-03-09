@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h2>Edit Friend</h2>
+        <form action="{{ url_for('views.edit_friend', friend_id=friend.id) }}" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input required type="text" class="form-control" id="name" name="name" value="{{ friend.name }}">
+            </div>
+            <div class="form-group">
+                <label for="friend_type">Type of Friend</label>
+                <select class="form-control" id="friend_type" name="friend_type">
+                  <option value="">Select a friend type</option>
+                  <option value="Home friend">Home friend</option>
+                  <option value="Acquaintance">Acquaintance</option>
+                  <option value="Relative">Relative</option>
+                  <option value="Schoolmate">Schoolmate</option>
+                  <option value="Collegemate">Collegemate</option>
+                  <option value="Childhood friend">Childhood friend</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description">{{ friend.description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="likes">Likes</label>
+                <textarea class="form-control" id="likes" name="likes">{{ friend.likes }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="years">Years known</label>
+                <input type="text" class="form-control" id="years" name="years" value="{{ friend.years }}">
+            </div>
+            <div class="form-group">
+                <label for="how_met">How we met</label>
+                <textarea class="form-control" id="how_met" name="how_met">{{ friend.how_met }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="best_memory">Best memory</label>
+                <textarea class="form-control" id="best_memory" name="best_memory">{{ friend.best_memory }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="addnl_info">Additional Info</label>
+                <textarea class="form-control" id="addnl_info" name="addnl_info">{{ friend.additional_info }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+{% endblock %}

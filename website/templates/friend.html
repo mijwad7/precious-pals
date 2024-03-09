@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Add Friend</h2>
+  <form method="POST" action="{{ url_for('views.add_friend') }}">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+ <div class="form-group">
+  <label for="friend_type">Type of Friend</label>
+  <select class="form-control" id="friend_type" name="friend_type">
+    <option value="">Select a friend type</option>
+    <option value="Home friend">Home friend</option>
+    <option value="Acquaintance">Acquaintance</option>
+    <option value="Relative">Relative</option>
+    <option value="Schoolmate">Schoolmate</option>
+    <option value="Collegemate">Collegemate</option>
+    <option value="Childhood friend">Childhood friend</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="likes">Likes</label>
+      <textarea class="form-control" id="likes" name="likes" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="years">Years known</label>
+      <input type="number" class="form-control" id="years" name="years">
+    </div>
+    <div class="form-group">
+      <label for="how_met">How we met</label>
+      <textarea class="form-control" id="how_met" name="how_met" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="best_memory">Best memory</label>
+      <textarea class="form-control" id="best_memory" name="best_memory" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="addnl_info">Additional Info</label>
+      <textarea class="form-control" id="addnl_info" name="addnl_info" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Friend</button>
+  </form>
+
+  <hr>
+
+ 
+{% endblock %}
